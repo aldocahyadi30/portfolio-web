@@ -1,6 +1,6 @@
 import React from "react";
 
-const TechProject = ({ tech }) => {
+const TechProject = ({ tech, isModal = false }) => {
   const url = `https://skillicons.dev/icons?i=${tech}`;
   var color = null;
   var name = null
@@ -44,10 +44,10 @@ const TechProject = ({ tech }) => {
   }
   return (
     <div className={`tech-project flex flex-row items-center justify-center ${color} rounded-full mr-1`}>
-      <div id="tech-square" className="size-5">
+      <div id="tech-square" className={`${isModal ? 'size-8' : 'size-5'}`}>
         <img src={url} alt="tech" className="rounded-full"></img>
       </div>
-      <p className="text-xs text-white font-medium mx-1">{name}</p>
+      <p className={`${isModal ? 'text-sm' : 'text-xs'} text-white font-medium mx-1`}>{name}</p>
     </div>
   );
 };
