@@ -6,7 +6,7 @@ import PCU from "../../assets/images/ukp.png";
 
 const Timeline = () => {
   return (
-    <section id="timeline" className="bg-jet lg:bg-raisin-black h-screen lg:min-h-screen w-full flex flex-col px-8 lg:px-20 xl:px-24 pt-16 lg:pt-24 xl:pt-24 lg:pb-8 xl:pb-16 snap-center">
+    <section id="timeline" className="bg-jet lg:bg-raisin-black min-h-screen w-full flex flex-col px-8 lg:px-20 xl:px-24 pt-8 lg:pt-24 xl:pt-24 lg:pb-8 xl:pb-16 snap-center">
       <div className="rounded-full w-fit border border-hunyadi-yellow py-1 px-4">
         <p className="text-hunyadi-yellow text-sm lg:text-base">TIMELINE</p>
       </div>

@@ -66,7 +66,7 @@ const TimelineItem = ({ img, name, detail, position, date, type, orientation }) 
         </div>
       </div>
       <div className="basis-5/6 py-2 lg:hidden flex items-center">
-        <div className="h-3/6 w-full bg-onyx rounded-2xl drop-shadow-lg flex flex-col p-4">
+        <div className="h-4/6 w-full bg-onyx rounded-2xl drop-shadow-lg flex flex-col p-4">
           <div className="w-full flex flex-row justify-between">
             <div>
               <p className="font-display text-hunyadi-yellow text-sm lg:text-base font-bold">{name}</p>

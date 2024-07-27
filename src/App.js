@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { SpeedInsights } from "@vercel/speed-insights/react"
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import About from "./components/section/About";
 import Contact from "./components/section/Contact";
 import Introduction from "./components/section/Introduction";
@@ -41,17 +41,22 @@ function App() {
   }
 
   function handleScroll() {
-    const content = document.getElementById("content");
+    if (window.innerWidth < 1024) {
+      window.location.href = "mailto:aldocahyadi28@gmail.com";
+    } else {
+      const content = document.getElementById("content");
 
-    content.scrollTo({
-      top: content.scrollHeight,
-      behavior: 'smooth',
-    });
+      content.scrollTo({
+        top: content.scrollHeight,
+        behavior: "smooth",
+      });
+    }
   }
+
   return (
-    <div id="mainContent" className="App">
-      <div className="relative h-full lg:h-screen w-screen bg-raisin-black flex flex-col lg:flex-row lg:pl-8">
-        <div className="h-screen w-full justify-center lg:basis-1/4  lg:border-x border-x-hunyadi-yellow flex flex-col items-center justify-center px-6">
+    <div className="App">
+      <div id="mainContent" className="relative h-full lg:h-screen w-screen bg-raisin-black flex flex-col lg:flex-row lg:pl-8">
+        <div className=" h-screen w-full justify-center lg:basis-1/4  lg:border-x border-x-hunyadi-yellow flex flex-col items-center justify-center px-6">
           <ProfilePicture />
           <p className="font-display text-2xl text-hunyadi-yellow font-bold mt-4">Aldo Octavio</p>
           <p className="font-display text-base text-platinum">Software Developer</p>
@@ -61,9 +66,9 @@ function App() {
             <SocialButton social="instagram" />
             <SocialButton social="facebook" />
           </div>
-          <a href="#" onClick={() => handleScroll()} className="bg-hunyadi-yellow drop-shadow-xl font-bold text-center border-2 border-hunyadi-yellow text-lg text-jet py-2 w-3/4 lg:w-full rounded-full hover:bg-jet hover:text-hunyadi-yellow hover:border-2 hover:border-hunyadi-yellow font-medium mb-2">
+          <button onClick={() => handleScroll()} className="bg-hunyadi-yellow drop-shadow-xl font-bold text-center border-2 border-hunyadi-yellow text-lg text-jet py-2 w-3/4 lg:w-full rounded-full hover:bg-jet hover:text-hunyadi-yellow hover:border-2 hover:border-hunyadi-yellow font-medium mb-2">
             Hire Me
-          </a>
+          </button>
           <a href={CV} target="_blank" rel="noreferrer" className="bg-jet drop-shadow-xl font-bold text-center text-lg border-2 border-hunyadi-yellow  text-hunyadi-yellow py-2 w-3/4 lg:w-full rounded-full hover:bg-hunyadi-yellow hover:text-jet hover:border-2 hover:border-hunyadi-yellow font-medium">
             Download CV
           </a>
@@ -76,7 +81,7 @@ function App() {
           <Contact />
         </div>
         {/* <ProjectModal /> */}
-        {isModalVisible && <ProjectModal closeModal={closeModal} selectedID={selectedProject} type={selectedProjectModal}/>}
+        {isModalVisible && <ProjectModal closeModal={closeModal} selectedID={selectedProject} type={selectedProjectModal} />}
         <SpeedInsights />
       </div>
     </div>
