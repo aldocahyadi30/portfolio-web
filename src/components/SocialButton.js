@@ -16,7 +16,7 @@ const SocialButton = ({ social }) => {
     url = 'https://github.com/aldocahyadi30';
   } else if (social === "linkedin") {
     element = <FontAwesomeIcon icon={faLinkedin} />;
-    url = 'https://www.linkedin.com/in/aldo-cahyadi-b649bb250/';
+    url = 'https://www.linkedin.com/in/aldocahyadi';
   }
 
   const buttonRef = useRef(null);

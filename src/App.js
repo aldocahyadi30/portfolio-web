@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/react"
 import About from "./components/section/About";
 import Contact from "./components/section/Contact";
 import Introduction from "./components/section/Introduction";
@@ -7,10 +8,12 @@ import Project from "./components/section/Project";
 import ProfilePicture from "./components/ProfilePicture";
 import SocialButton from "./components/SocialButton";
 import ProjectModal from "./components/ProjectModal";
+import CV from "./assets/files/cv.pdf";
 
 function App() {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [selectedProject, setSelectedProject] = useState(0);
+  const [selectedProjectModal, setSelectedProjectModal] = useState(0);
 
   useEffect(() => {
     const content = document.getElementById("content");
@@ -21,14 +24,29 @@ function App() {
     }
   }, [isModalVisible]);
 
-  function openModal(id) {
+  function openProjectModal() {
+    setIsModalVisible(true);
+    setSelectedProjectModal(0);
+  }
+
+  function openProjectDetailModal(id) {
     setIsModalVisible(true);
     setSelectedProject(id);
+    setSelectedProjectModal(1);
   }
 
   function closeModal() {
     setIsModalVisible(false);
     setSelectedProject(0);
+  }
+
+  function handleScroll() {
+    const content = document.getElementById("content");
+
+    content.scrollTo({
+      top: content.scrollHeight,
+      behavior: 'smooth',
+    });
   }
   return (
     <div id="mainContent" className="App">
@@ -43,10 +61,10 @@ function App() {
             <SocialButton social="instagram" />
             <SocialButton social="facebook" />
           </div>
-          <a href="#" className="bg-hunyadi-yellow drop-shadow-xl font-bold text-center border-2 border-hunyadi-yellow text-lg text-jet py-2 w-full rounded-full hover:bg-jet hover:text-hunyadi-yellow hover:border-2 hover:border-hunyadi-yellow font-medium mb-2">
+          <a href="#" onClick={() => handleScroll()} className="bg-hunyadi-yellow drop-shadow-xl font-bold text-center border-2 border-hunyadi-yellow text-lg text-jet py-2 w-3/4 lg:w-full rounded-full hover:bg-jet hover:text-hunyadi-yellow hover:border-2 hover:border-hunyadi-yellow font-medium mb-2">
             Hire Me
           </a>
-          <a href="#" className="bg-jet drop-shadow-xl font-bold text-center text-lg border-2 border-hunyadi-yellow  text-hunyadi-yellow py-2 w-full rounded-full hover:bg-hunyadi-yellow hover:text-jet hover:border-2 hover:border-hunyadi-yellow font-medium">
+          <a href={CV} target="_blank" rel="noreferrer" className="bg-jet drop-shadow-xl font-bold text-center text-lg border-2 border-hunyadi-yellow  text-hunyadi-yellow py-2 w-3/4 lg:w-full rounded-full hover:bg-hunyadi-yellow hover:text-jet hover:border-2 hover:border-hunyadi-yellow font-medium">
             Download CV
           </a>
         </div>
@@ -54,10 +72,12 @@ function App() {
           <Introduction />
           <About />
           <Timeline />
-          <Project openModal={openModal} />
+          <Project openProjectModal={openProjectModal} openProjectDetailModal={openProjectDetailModal} />
           <Contact />
         </div>
-        {isModalVisible && <ProjectModal closeModal={closeModal} selectedID={selectedProject} />}
+        {/* <ProjectModal /> */}
+        {isModalVisible && <ProjectModal closeModal={closeModal} selectedID={selectedProject} type={selectedProjectModal}/>}
+        <SpeedInsights />
       </div>
     </div>
   );

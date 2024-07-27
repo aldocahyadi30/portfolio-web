@@ -41,7 +41,7 @@ const ProjedCarousel = ({imgArr}) => {
               key={imgIndex}
               src={imgArr[imgIndex]}
               alt={`Preview ${imgIndex}`}
-              className={`xl:w-48 h-auto cursor-pointer ring-platinum hover:scale-110 hover:drop-shadow-lg duration-300 ${imgIndex === index ? "scale-110 drop-shadow-lg ring" : "ring-1"}`}
+              className={`lg:w-36 xl:w-48 h-auto cursor-pointer ring-platinum hover:scale-110 hover:drop-shadow-lg duration-300 ${imgIndex === index ? "scale-110 drop-shadow-lg ring" : "ring-1"}`}
               onClick={() => handlePreviewClick(imgIndex)}
             />
           ))}

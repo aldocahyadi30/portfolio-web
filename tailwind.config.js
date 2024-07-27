@@ -5,10 +5,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        '2xs': '0.5rem', // 8px
+        '3xs': '0.375rem', // 6px
+      },
       colors: {
         'raisin-black': '#2E2E35',
         'eerie-black': '#212529',
-        'hunyadi-yellow': '#E4AA48',
+        'xanthous': '#FFC86B',
+        'hunyadi-yellow': '#F0BF6C',
         'sunset': '#F0C77D',
         'platinum': '#DADADA',
         'onyx': '#3E3E44',

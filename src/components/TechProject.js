@@ -1,9 +1,32 @@
+import { icon } from "@fortawesome/fontawesome-svg-core";
 import React from "react";
 
-const TechProject = ({ tech, isModal = false }) => {
+const TechProject = ({ tech, size ='sm' }) => {
   const url = `https://skillicons.dev/icons?i=${tech}`;
   var color = null;
   var name = null
+  var iconSize = null;
+  var textSize = null;
+
+  switch (size) {
+    case "s":
+      iconSize = "lg:size-3 xl:size-4";
+      textSize = "lg:text-3xs xl:text-2xs";
+      break;
+    case "m":
+      iconSize = "size-5 lg:size-4 xl:size-5";
+      textSize = "text-xs lg:text-2xs xl:text-xs";
+      break;
+    case "l":
+      iconSize = "lg:size-6 xl:size-8";
+      textSize = "lg:text-xs xl:text-sm";
+      break;
+    default:
+      iconSize = "lg:size-4 xl:size-5";
+      textSize = "lg:text-2xs xl:text-xs";
+      break;
+  }
+
   switch (tech) {
     case "supabase":
       color = "bg-[#3ecf8e]";
@@ -44,10 +67,10 @@ const TechProject = ({ tech, isModal = false }) => {
   }
   return (
     <div className={`tech-project flex flex-row items-center justify-center ${color} rounded-full mr-1`}>
-      <div id="tech-square" className={`${isModal ? 'size-8' : 'size-5'}`}>
+      <div id="tech-square" className={`${iconSize}`}>
         <img src={url} alt="tech" className="rounded-full"></img>
       </div>
-      <p className={`${isModal ? 'text-sm' : 'text-xs'} text-white font-medium mx-1`}>{name}</p>
+      <p className={`${textSize} text-white font-medium mx-1`}>{name}</p>
     </div>
   );
 };
