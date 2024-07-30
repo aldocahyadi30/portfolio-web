@@ -32,7 +32,7 @@ const ProjectModal = ({ closeModal, selectedID = 0, type = 0 }) => {
         );
       } else {
         githubButton = (
-          <div className="flex flex-row">
+          <div className="flex flex-row gap-2">
             <a href={data.github} className="self-center block my-4 bg-[#2b3137] hover:bg-[#24292e] hover:drop-shadow-xl text-center text-[#fafbfc] py-2 w-2/4 rounded-full font-medium">
               <FontAwesomeIcon icon={faGithub} /> Source Code 1
             </a>
