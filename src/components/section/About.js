@@ -6,10 +6,10 @@ const About = () => {
       <div className="rounded-full w-fit border border-hunyadi-yellow py-1 px-4">
         <p className="text-hunyadi-yellow text-sm lg:text-base">ABOUT</p>
       </div>
-      <p className="font-display text-2xl lg:text-4xl xl:text-5xl text-left text-hunyadi-yellow font-bold my-4 lg:my-8 xl:my-12">
+      <p className="font-display text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-left text-hunyadi-yellow font-bold my-4 lg:my-8 xl:my-12">
         ABOUT <span className="text-platinum">ME</span>
       </p>
-      <p className="font-display text-2xs lg:text-base xl:text-lg text-left text-platinum mb-4 lg:mb-8 xl:mb-12 ">
+      <p className="font-display text-2xs sm:text-xs lg:text-base xl:text-lg text-left text-platinum mb-4 lg:mb-8 xl:mb-12 ">
         My name is Aldo Octavio, a fresh graduate and versatile Software Engineer skilled in React and Laravel for web development, and Flutter for creating seamless cross-platform mobile applications. During my one-year internship at PT. Avia Avian Tbk, I gained hands-on experience developing
         internal websites with Laravel, collaborating with senior developers, engaging in client discussions, and presenting project demos, which further honed both my technical and soft skills.
       </p>

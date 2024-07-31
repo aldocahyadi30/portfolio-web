@@ -4,7 +4,7 @@ const ProfilePicture = () => {
   return (
     <div id="profile-picture">
       <div className="rounded-2xl w-full h-fit overflow-hidden">
-        <img src={Picture} alt="profile" className="w-56   lg:w-max lg:h-max object-cover"></img>
+        <img src={Picture} alt="profile" className="w-56 sm:w-72  lg:w-max lg:h-max object-cover"></img>
       </div>
     </div>
   );

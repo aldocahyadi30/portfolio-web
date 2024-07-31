@@ -69,16 +69,16 @@ const TimelineItem = ({ img, name, detail, position, date, type, orientation }) 
         <div className="h-4/6 w-full bg-onyx rounded-2xl drop-shadow-lg flex flex-col p-4">
           <div className="w-full flex flex-row justify-between">
             <div>
-              <p className="font-display text-hunyadi-yellow text-sm lg:text-base font-bold">{name}</p>
-              <p className="font-display text-platinum text-sm font-medium">{detail}</p>
-              <p className="font-display text-platinum text-sm font-normal">{position}</p>
+              <p className="font-display text-hunyadi-yellow text-sm sm:text-2xl font-bold">{name}</p>
+              <p className="font-display text-platinum text-sm sm:text-xl font-medium">{detail}</p>
+              <p className="font-display text-platinum text-sm sm:text-xl font-normal">{position}</p>
             </div>
-            <div className="size-14 bg-platinum rounded-2xl drop-shadow-lg flex items-center justify-center p-2">
+            <div className="size-14 sm:size-24 bg-platinum rounded-2xl drop-shadow-lg flex items-center justify-center p-2">
               <img src={img} alt={name} className="size-auto"></img>
             </div>
           </div>
           <hr className="border-platinum w-full mt-auto" />
-          <p className="font-display text-platinum text-sm font-normal">{date}</p>
+          <p className="font-display text-platinum text-sm sm:text-xl font-normal">{date}</p>
         </div>
       </div>
     </div>

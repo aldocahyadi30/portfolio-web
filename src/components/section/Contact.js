@@ -25,11 +25,11 @@ const Contact = () => {
     }
   }
   return (
-    <section id="contact" className="relative bg-jet lg:bg-raisin-black min-h-screen w-full px-8 lg:px-20 xl:px-24 py-8 lg:p-0 lg:py-24 xl:py-24 flex flex-col snap-center">
+    <section id="contact" className="relative bg-jet lg:bg-raisin-black sm:h-screen min-h-screen w-full px-8 lg:px-20 xl:px-24 py-8 lg:p-0 lg:py-24 xl:py-24 flex flex-col snap-center">
       <div className="rounded-full w-fit border border-hunyadi-yellow py-1 px-4">
         <p className="text-hunyadi-yellow text-sm lg:text-base">CONTACT</p>
       </div>
-      <p className="font-display text-2xl lg:text-4xl xl:text-5xl text-left text-hunyadi-yellow font-bold my-4 lg:my-8 xl:my-12">
+      <p className="font-display text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-left text-hunyadi-yellow font-bold my-4 lg:my-8 xl:my-12">
         CONTACT <span className="text-platinum">ME</span>
       </p>
       <div className="w-full h-full grid p-12 lg:p-0 gap-4 lg:gap-16 grid-cols-1 lg:grid-cols-2">

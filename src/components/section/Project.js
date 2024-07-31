@@ -15,16 +15,16 @@ const Project = ({ openProjectModal, openProjectDetailModal }) => {
       <div className="rounded-full w-fit border border-hunyadi-yellow py-1 px-4">
         <p className="text-hunyadi-yellow text-sm lg:text-base">PROJECT</p>
       </div>
-      <p className="font-display text-2xl lg:text-4xl xl:text-5xl text-left text-hunyadi-yellow font-bold my-4 lg:my-8 xl:my-12">
+      <p className="font-display text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-left text-hunyadi-yellow font-bold my-4 lg:my-8 xl:my-12">
         FEATURED <span className="text-platinum">PROJECT</span>
       </p>
-      <div className="h-full w-full grid gap-2 lg:gap-2 xl:gap-4 grid-cols-1 lg:grid-cols-2">
+      <div className="h-full w-full grid gap-2 lg:gap-2 xl:gap-4 grid-cols-1 lg:grid-cols-2 justify-items-center">
         {project
           .filter((item) => item.featured)
           .map((item) => {
             return (
-              <div key={item.id} onClick={() => handleClick(item.id)} className=" relative bg-onyx w-full h-full rounded-xl flex items-center justify-center p-4 hover:cursor-pointer hover:scale-105 hover:drop-shadow-lg duration-200">
-                <img src={item.cover} alt={item.name} className="rounded-xl drop-shadow-lg" />
+              <div key={item.id} onClick={() => handleClick(item.id)} className="relative bg-onyx w-full h-full sm:md:w-3/4 rounded-xl flex items-center justify-center p-4 hover:cursor-pointer hover:scale-105 hover:drop-shadow-lg duration-200">
+                <img src={item.cover} alt={item.name} className="rounded-xl drop-shadow-lg h-full w-full" />
                 <div className="absolute bottom-2 left-1 flex flex-row">
                   {item.tech.map((tech) => {
                     return <TechProject tech={tech} size="m" />;
