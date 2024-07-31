@@ -1,14 +1,14 @@
-import { useState, useEffect } from "react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { useEffect, useState } from "react";
+import CV from "./assets/files/cv.pdf";
+import ProfilePicture from "./components/ProfilePicture";
+import ProjectModal from "./components/ProjectModal";
 import About from "./components/section/About";
 import Contact from "./components/section/Contact";
 import Introduction from "./components/section/Introduction";
-import Timeline from "./components/section/Timeline";
 import Project from "./components/section/Project";
-import ProfilePicture from "./components/ProfilePicture";
+import Timeline from "./components/section/Timeline";
 import SocialButton from "./components/SocialButton";
-import ProjectModal from "./components/ProjectModal";
-import CV from "./assets/files/cv.pdf";
 
 function App() {
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -60,7 +60,7 @@ function App() {
           <ProfilePicture />
           <p className="font-display text-2xl text-hunyadi-yellow font-bold mt-4">Aldo Octavio</p>
           <p className="font-display text-base text-platinum">Software Developer</p>
-          <div className="flex flex-row justify-evenly w-full sm:md:w-2/4 my-6 px-8 lg:px-0">
+          <div className="flex flex-row justify-evenly w-full sm:max-md:w-2/4 my-6 px-8 lg:px-0">
             <SocialButton social="linkedin" />
             <SocialButton social="github" />
             <SocialButton social="instagram" />
