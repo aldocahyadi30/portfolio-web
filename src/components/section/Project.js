@@ -24,7 +24,7 @@ const Project = ({ openProjectModal, openProjectDetailModal }) => {
           .map((item) => {
             return (
               <div key={item.id} onClick={() => handleClick(item.id)} className="relative bg-onyx w-full h-full sm:max-md:w-3/4 rounded-xl flex items-center justify-center p-4 hover:cursor-pointer hover:scale-105 hover:drop-shadow-lg duration-200">
-                <img src={item.cover} alt={item.name} className="rounded-xl drop-shadow-lg h-full w-full" />
+                <img src={item.cover} alt={item.name} className="rounded-xl drop-shadow-lg sm:max-md:h-full sm:max-md:w-full" />
                 <div className="absolute bottom-2 left-1 flex flex-row">
                   {item.tech.map((tech) => {
                     return <TechProject tech={tech} size="m" />;
