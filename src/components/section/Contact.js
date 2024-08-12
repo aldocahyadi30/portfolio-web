@@ -6,7 +6,7 @@ import { faWhatsapp, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 const Contact = () => {
   function copyNumber() {
-    if (navigator.clipboard && navigator.clipboard.writeText) {
+    if (navigator.clipboard?.writeText) {
       navigator.clipboard.writeText("+6285174241330").then(() => {
         toast.success("Number copied to clipboard!");
       });
