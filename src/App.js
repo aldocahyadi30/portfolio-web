@@ -1,5 +1,5 @@
 import { SpeedInsights } from "@vercel/speed-insights/react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import CV from "./assets/files/cv.pdf";
 import ProfilePicture from "./components/ProfilePicture";
 import ProjectModal from "./components/ProjectModal";
@@ -14,15 +14,6 @@ function App() {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [selectedProject, setSelectedProject] = useState(0);
   const [selectedProjectModal, setSelectedProjectModal] = useState(0);
-
-  useEffect(() => {
-    const content = document.getElementById("content");
-    if (isModalVisible) {
-      content.classList.add("no-scroll");
-    } else {
-      content.classList.remove("no-scroll");
-    }
-  }, [isModalVisible]);
 
   function openProjectModal() {
     setIsModalVisible(true);
@@ -66,10 +57,18 @@ function App() {
             <SocialButton social="instagram" />
             <SocialButton social="facebook" />
           </div>
-          <button onClick={() => handleScroll()} className="bg-hunyadi-yellow drop-shadow-xl font-bold text-center border-2 border-hunyadi-yellow text-lg text-jet py-2 w-3/4 sm:w-2/4 lg:w-full rounded-full hover:bg-jet hover:text-hunyadi-yellow hover:border-2 hover:border-hunyadi-yellow font-medium mb-2">
+          <button
+            onClick={() => handleScroll()}
+            className="bg-hunyadi-yellow drop-shadow-xl font-bold text-center border-2 border-hunyadi-yellow text-lg text-jet py-2 w-3/4 sm:w-2/4 lg:w-full rounded-full hover:bg-jet hover:text-hunyadi-yellow hover:border-2 hover:border-hunyadi-yellow font-medium mb-2"
+          >
             Hire Me
           </button>
-          <a href={CV} target="_blank" rel="noreferrer" className="bg-jet drop-shadow-xl font-bold text-center text-lg border-2 border-hunyadi-yellow  text-hunyadi-yellow py-2 w-3/4 sm:w-2/4 lg:w-full rounded-full hover:bg-hunyadi-yellow hover:text-jet hover:border-2 hover:border-hunyadi-yellow font-medium">
+          <a
+            href={CV}
+            target="_blank"
+            rel="noreferrer"
+            className="bg-jet drop-shadow-xl font-bold text-center text-lg border-2 border-hunyadi-yellow  text-hunyadi-yellow py-2 w-3/4 sm:w-2/4 lg:w-full rounded-full hover:bg-hunyadi-yellow hover:text-jet hover:border-2 hover:border-hunyadi-yellow font-medium"
+          >
             Download CV
           </a>
         </div>
