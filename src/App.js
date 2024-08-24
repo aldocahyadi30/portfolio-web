@@ -1,5 +1,5 @@
-import { SpeedInsights } from "@vercel/speed-insights/react";
 import { useState } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import CV from "./assets/files/cv.pdf";
 import ProfilePicture from "./components/ProfilePicture";
 import ProjectModal from "./components/ProjectModal";
