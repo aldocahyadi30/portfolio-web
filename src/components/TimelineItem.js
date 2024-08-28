@@ -3,60 +3,37 @@ import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGraduationCap, faBriefcase } from "@fortawesome/free-solid-svg-icons";
 
-const TimelineItem = ({ img, name, detail, position, date, type, orientation }) => {
+const TimelineItem = ({ img, name, detail, position, date, type }) => {
   var icon = null;
-  var leftElement = null;
-  var rightElement = null;
   if (type === 1) {
     icon = faGraduationCap;
   } else {
     icon = faBriefcase;
   }
 
-  if (orientation === 1) {
-    leftElement = (
-      <div className="h-full w-full bg-onyx rounded-2xl drop-shadow-lg flex flex-col lg:p-2">
-        <p className="font-display text-hunyadi-yellow lg:text-base xl:text-lg font-bold">{name}</p>
-        <p className="font-display text-platinum lg:text-sm font-medium">{detail}</p>
-        <p className="font-display text-platinum lg:text-sm font-normal">{position}</p>
-        <hr className="border-platinum w-full mt-auto" />
-        <p className="font-display text-platinum lg:text-sm font-normal">{date}</p>
-      </div>
-    );
-    rightElement = (
-      <div className="h-full w-full bg-platinum rounded-2xl drop-shadow-lg flex items-center justify-center lg:p-2">
-        <img src={img} alt={name} className="size-16 lg:size-24"></img>
-      </div>
-    );
-  } else {
-    leftElement = (
-      <div className="h-full w-full bg-platinum rounded-2xl drop-shadow-lg flex items-center justify-center lg:p-2">
-        <img src={img} alt={name} className="size-16 lg:size-24"></img>
-      </div>
-    );
-
-    rightElement = (
-      <div className="h-full w-full bg-onyx rounded-2xl drop-shadow-lg flex flex-col lg:p-2">
-         <p className="font-display text-hunyadi-yellow lg:text-base xl:text-lg font-bold">{name}</p>
-        <p className="font-display text-platinum lg:text-sm font-medium">{detail}</p>
-        <p className="font-display text-platinum lg:text-sm font-normal">{position}</p>
-        <hr className="border-platinum w-full mt-auto" />
-        <p className="font-display text-platinum lg:text-sm font-normal">{date}</p>
-      </div>
-    );
-  }
+  
 
   return (
     <div className="timeline w-full flex flex-row h-full justify-center">
       {/* Desktop View */}
-      <div className="hidden lg:flex basis-5/12 h-full w-full py-2">{leftElement}</div>
-      <div className="hidden lg:flex basis-1/12 flex justify-center relative h-full">
-        <div className="w-1 bg-hunyadi-yellow h-full"></div>
-        <div className="absolute bg-jet size-8 border-4 border-hunyadi-yellow rounded-full bottom-2/4 flex items-center justify-center">
-          <FontAwesomeIcon icon={icon} className="text-platinum" />
+      <div className="size-full hidden lg:flex flex-col justify-center">
+        <div className="basis-3/5 relative flex flex-col bg-raisin-black w-[95%] self-center rounded-3xl items-center lg:py-4 hover:scale-105 duration-200">
+          <img src={img} alt={name} className="w-[30%] mb-2"></img>
+          <p className="font-display text-hunyadi-yellow lg:text-2xl font-bold text-center h-[20%]">{name}</p>
+          <p className="font-display text-platinum lg:text-xl font-medium">{detail}</p>
+          <p className="font-display text-platinum lg:text-xl font-light">{position}</p>
+
+          <div className="absolute bg-xanthous rounded-2xl py-1 px-4 drop-shadow-lg bottom-4">
+            <p className="font-display text-raisin-black lg:text-sm font-bold">{date}</p>
+          </div>
+        </div>
+        <div className="relative basis-1/4 flex items-center justify-center">
+          <hr className="w-full bg-hunyadi-yellow h-1"></hr>
+          <div className="absolute bg-jet size-8 border-4 border-hunyadi-yellow rounded-full  flex items-center justify-center">
+            <FontAwesomeIcon icon={icon} className="text-platinum" />
+          </div>
         </div>
       </div>
-      <div className="hidden lg:flex basis-5/12 py-2">{rightElement}</div>
 
       {/* Mobile View */}
       <div className="basis-1/6 flex justify-center relative h-full lg:hidden">
@@ -66,10 +43,10 @@ const TimelineItem = ({ img, name, detail, position, date, type, orientation }) 
         </div>
       </div>
       <div className="basis-5/6 py-2 lg:hidden flex items-center">
-        <div className="h-4/6 w-full bg-onyx rounded-2xl drop-shadow-lg flex flex-col p-4">
+        <div className="h-4/6 w-full bg-onyx rounded-2xl drop-shadow-lg flex flex-col p-2">
           <div className="w-full flex flex-row justify-between">
             <div>
-              <p className="font-display text-hunyadi-yellow text-sm sm:text-2xl font-bold">{name}</p>
+              <p className="font-display text-sunset text-sm sm:text-2xl font-bold">{name}</p>
               <p className="font-display text-platinum text-sm sm:text-xl font-medium">{detail}</p>
               <p className="font-display text-platinum text-sm sm:text-xl font-normal">{position}</p>
             </div>
@@ -78,7 +55,7 @@ const TimelineItem = ({ img, name, detail, position, date, type, orientation }) 
             </div>
           </div>
           <hr className="border-platinum w-full mt-auto" />
-          <p className="font-display text-platinum text-sm sm:text-xl font-normal">{date}</p>
+          <p className="font-display text-onyx text-xs  font-medium mt-auto bg-sunset w-fit py-0.5 px-1 rounded-xl self-center">{date}</p>
         </div>
       </div>
     </div>
@@ -91,7 +68,6 @@ TimelineItem.propTypes = {
   position: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   type: PropTypes.number.isRequired,
-  orientation: PropTypes.number.isRequired,
 };
 
 export default TimelineItem;
