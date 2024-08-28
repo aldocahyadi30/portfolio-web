@@ -13,7 +13,7 @@ module.exports = {
         'raisin-black': '#2E2E35',
         'eerie-black': '#212529',
         'xanthous': '#FFC86B',
-        'hunyadi-yellow': '#F0BF6C',
+        'hunyadi-yellow': '#E4AA48',
         'sunset': '#F0C77D',
         'platinum': '#DADADA',
         'onyx': '#3E3E44',

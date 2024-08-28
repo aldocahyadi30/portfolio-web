@@ -33,7 +33,7 @@ const ProjedCarousel = ({imgArr}) => {
       </div>
       <div className="basis-2/6 flex flex-row">
         <div className="basis-1/12 flex items-center justify-center" onClick={handlePrevClick}>
-          <FontAwesomeIcon icon={faChevronLeft} className="text-platinum size-8 cursor-pointer hover:text-sunset hover:scale-110 active:text-platinum" />
+          <FontAwesomeIcon icon={faChevronLeft} className="text-platinum size-8 cursor-pointer hover:text-hunyadi-yellow hover:scale-110 active:text-platinum" />
         </div>
         <div className="basis-10/12 flex flex-row items-center justify-between gap-4">
           {previewImages.map((imgIndex) => (
@@ -47,7 +47,7 @@ const ProjedCarousel = ({imgArr}) => {
           ))}
         </div>
         <div className="basis-1/12 flex items-center justify-center" onClick={handleNextClick}>
-          <FontAwesomeIcon icon={faChevronRight} className="text-platinum size-8 cursor-pointer hover:text-sunset hover:scale-110 active:text-platinum" />
+          <FontAwesomeIcon icon={faChevronRight} className="text-platinum size-8 cursor-pointer hover:text-hunyadi-yellow hover:scale-110 active:text-platinum" />
         </div>
       </div>
     </div>

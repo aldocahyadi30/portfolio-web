@@ -13,8 +13,8 @@ const TechProject = ({ tech, size ='sm' }) => {
       textSize = "lg:text-3xs xl:text-2xs";
       break;
     case "m":
-      iconSize = "size-5 lg:size-4 xl:size-5";
-      textSize = "text-xs lg:text-2xs xl:text-xs";
+      iconSize = "size-4 lg:size-4 xl:size-5";
+      textSize = "text-3xs lg:text-xs";
       break;
     case "l":
       iconSize = "lg:size-6 xl:size-8";
@@ -65,7 +65,7 @@ const TechProject = ({ tech, size ='sm' }) => {
       break;
   }
   return (
-    <div className={`tech-project flex flex-row items-center justify-center ${color} rounded-full mr-1`}>
+    <div className={`tech-project flex flex-row items-center justify-center ${color} rounded-full mr-1 hover:shadow-xl `}>
       <div id="tech-square" className={`${iconSize}`}>
         <img src={url} alt="tech" className="rounded-full"></img>
       </div>

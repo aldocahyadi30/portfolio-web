@@ -31,7 +31,7 @@ const SocialButton = ({ social }) => {
 
   return (
     <div id="social-btn" className="social-btn rounded-full size-10 border border-platinum flex items-center justify-center hover:border-hunyadi-yellow">
-      <a className="social-icon text-lg text-platinum " href={url} target="_blank" rel="noopener noreferrer">{element}</a>
+      <a className="social-icon text-lg text-platinum" href={url} target="_blank" rel="noopener noreferrer">{element}</a>
     </div>
   );
 };
