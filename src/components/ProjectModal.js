@@ -17,7 +17,7 @@ const ProjectModal = ({ closeModal, selectedID = 0, type = 0 }) => {
   function back() {
     setProjectIndex(0);
   }
-
+  
   if (projectIndex !== 0 || selectedID !== 0) {
     const index = projectIndex !== 0 ? projectIndex : selectedID;
     data = project.filter((item) => item.id === index)[0];

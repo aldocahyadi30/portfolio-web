@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import ProfilePicture from "./components/ProfilePicture";
 import ProjectModal from "./components/ProjectModal";
+import LoadingModal from "./components/LoadingModal";
 import About from "./components/section/About";
 import Contact from "./components/section/Contact";
 import Introduction from "./components/section/Introduction";
@@ -11,6 +12,7 @@ import SocialButton from "./components/SocialButton";
 
 function App() {
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [selectedProject, setSelectedProject] = useState(0);
   const [selectedProjectModal, setSelectedProjectModal] = useState(0);
   const [index, setIndex] = useState(0);
@@ -34,6 +36,14 @@ function App() {
   function closeModal() {
     setIsModalVisible(false);
     setSelectedProject(0);
+  }
+
+  function openLoadingModal(runFunction) {
+    setIsLoading(true);
+  }
+
+  function closeLoadingModal() {
+    setIsLoading(false);
   }
 
   useEffect(() => {
@@ -127,19 +137,19 @@ function App() {
             <SocialButton social="facebook" />
           </div>
           <div className="hidden lg:flex absolute w-full bottom-0  justify-evenly py-2">
-            <button onClick={() => handleScroll("introduction")} className={`px-2 font-display text-platinum hover:font-bold ${index === 0 ? "font-bold" : ""}`}>
+            <button onClick={() => handleScroll("introduction")} className={`font-display text-platinum hover:font-bold ${index === 0 ? "font-bold" : ""}`}>
               Home
             </button>
-            <button onClick={() => handleScroll("about")} className={`px-2 font-display text-platinum hover:font-bold ${index === 1 ? "font-bold" : ""}`}>
+            <button onClick={() => handleScroll("about")} className={`font-display text-platinum hover:font-bold ${index === 1 ? "font-bold" : ""}`}>
               About
             </button>
-            <button onClick={() => handleScroll("timeline")} className={`px-2 font-display text-platinum hover:font-bold ${index === 2 ? "font-bold" : ""}`}>
+            <button onClick={() => handleScroll("timeline")} className={`font-display text-platinum hover:font-bold ${index === 2 ? "font-bold" : ""}`}>
               Timeline
             </button>
-            <button onClick={() => handleScroll("project")} className={`px-2 font-display text-platinum hover:font-bold ${index === 3 ? "font-bold" : ""}`}>
+            <button onClick={() => handleScroll("project")} className={` font-display text-platinum hover:font-bold ${index === 3 ? "font-bold" : ""}`}>
               Project
             </button>
-            <button onClick={() => handleScroll("contact")} className={`px-2 font-display text-platinum hover:font-bold ${index === 4 ? "font-bold" : ""}`}>
+            <button onClick={() => handleScroll("contact")} className={`font-display text-platinum hover:font-bold ${index === 4 ? "font-bold" : ""}`}>
               Contact
             </button>
           </div>
@@ -149,9 +159,10 @@ function App() {
           <About reference={aboutRef} />
           <Timeline reference={timelineRef} />
           <Project reference={projectRef} openProjectModal={openProjectModal} openProjectDetailModal={openProjectDetailModal} />
-          <Contact reference={contactRef} />
+          <Contact reference={contactRef} openLoading={openLoadingModal} closeLoading={closeLoadingModal} />
         </div>
         {isModalVisible && <ProjectModal closeModal={closeModal} selectedID={selectedProject} type={selectedProjectModal} />}
+        {isLoading && <LoadingModal />}
         <SpeedInsights />
       </div>
     </div>
