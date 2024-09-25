@@ -28,7 +28,7 @@ const TimelineItem = ({ img, name, detail, position, date, type }) => {
           </div>
         </div>
         <div className="relative basis-1/4 flex items-center justify-center">
-          <hr className="w-full bg-hunyadi-yellow h-1"></hr>
+          <hr className="w-full bg-hunyadi-yellow border-hunyadi-yellow h-1"></hr>
           <div className="absolute bg-jet size-8 border-4 border-hunyadi-yellow rounded-full  flex items-center justify-center">
             <FontAwesomeIcon icon={icon} className="text-platinum" />
           </div>
